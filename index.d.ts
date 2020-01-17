@@ -40,6 +40,11 @@ declare module 'react-native-pages' {
     containerStyle?: ViewStyle
 
     /**
+     * Style for dots
+     */
+    dotStyle?: ViewStyle
+
+    /**
      * Animated.Value updated with progress
      */
     progress?: Animated.Value

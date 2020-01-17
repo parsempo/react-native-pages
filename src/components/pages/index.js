@@ -38,6 +38,7 @@ export default class Pages extends PureComponent {
 
   static propTypes = {
     style: ViewPropTypes.style,
+    dotStyle: ViewPropTypes.style,
     containerStyle: ViewPropTypes.style,
 
     indicatorColor: PropTypes.string,
@@ -238,7 +239,7 @@ export default class Pages extends PureComponent {
   }
 
   renderPager(pager) {
-    let { renderPager, horizontal, rtl } = this.props;
+    let { renderPager, horizontal, rtl, dotStyle } = this.props;
 
     if ('function' === typeof renderPager) {
       return renderPager({ horizontal, rtl, ...pager });
@@ -258,7 +259,7 @@ export default class Pages extends PureComponent {
 
     return (
       <SafeAreaView style={style} pointerEvents='none'>
-        <Indicator {...pager} />
+        <Indicator {...pager} dotStyle={dotStyle}/>
       </SafeAreaView>
     );
   }
